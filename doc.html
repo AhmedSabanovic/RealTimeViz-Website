@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code Documentation - US Flight Delay Explorer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2, h3, h4 {
+      color: #333;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Code Documentation</h1>
+  </header>
+  <div class="container">
+    <section id="code-documentation">
+      <h2>Code Documentation</h2>
+      <p>This section provides an overview of the key files and functionalities implemented in the <strong>US Flight Delay Explorer</strong> project. The documentation covers the primary files essential for the application, including their roles and functionalities.</p>
+      
+      <h3>index.html</h3>
+
+      <h4>Libraries & Frameworks</h4>
+      <ul>
+        <li><code>D3.js</code>: For creating dynamic and interactive data visualizations.</li>
+        <li><code>TopoJSON</code>: For handling geographic data.</li>
+        <li><code>PapaParse</code>: For parsing CSV data.</li>
+      </ul>
+
+      <h4>HTML Structure</h4>
+      <ul>
+        <li><code>.page-title</code>: Displays the main title of the application.</li>
+        <li><code>.main-content</code>: Container for the filter panel and map.</li>
+        <li><code>.filter-panel</code>: Contains filter options for the data visualization.</li>
+        <li><code>#map-container</code>: Hosts the SVG map and zoom controls.</li>
+        <li><code>svg</code>: SVG element where the D3 visualization is rendered.</li>
+        <li><code>.zoom-controls</code>: Buttons for zooming in, zooming out, and resetting the map view.</li>
+      </ul>
+
+      <h4>JavaScript Functionality</h4>
+      <ul>
+        <li><code>Main.js</code>: Handles data loading, processing, and visualization logic.</li>
+        <li><code>D3.js</code>: Manages the creation and manipulation of SVG elements for the map and data points.</li>
+        <li><code>Zoom Controls</code>: Implements zooming and panning functionality for the map.</li>
+        <li><code>Filter Mechanism</code>: Applies user-selected filters to the displayed data.</li>
+      </ul>
+      
+      <h4>File Dependencies</h4>
+      <ul>
+        <li><code>styles.css</code>: Styles the layout, filter panel, map container, and interactive elements.</li>
+        <li><code>main.js</code>: Contains the core logic for data handling and visualization.</li>
+        <li><code>D3.js</code>, <code>TopoJSON</code>, <code>PapaParse</code>: External libraries for visualization and data processing.</li>
+      </ul>
+      
+      <h3>styles.css</h3>
+      <h4>Classes & IDs</h4>
+      <ul>
+        <li><code>body</code>: Sets the overall layout and background.</li>
+        <li><code>.page-title</code>: Styles the fixed header with the application title.</li>
+        <li><code>.main-content</code>: Defines the main container layout.</li>
+        <li><code>.filter-panel</code>: Styles the filter options panel.</li>
+        <li><code>#map-container</code>: Styles the map area and positions the SVG.</li>
+        <li><code>.zoom-controls</code>: Styles the zoom buttons.</li>
+        <li><code>.tooltip</code>: Styles the tooltip for displaying information on hover.</li>
+        <li><code>.legend</code>: Styles the legend indicating data scales.</li>
+      </ul>
+      
+      <h4>Responsive Design</h4>
+      <ul>
+        <li>Media queries adjust the layout for various screen sizes, ensuring usability on desktops and mobile devices.</li>
+      </ul>
+      
+      <h3>main.js</h3>
+      
+      <h4>Variables</h4>
+      <ul>
+        <li><code>dataCache</code>: Caches loaded data for performance optimization.</li>
+        <li><code>loadingQueue</code>: Tracks loading states of data requests.</li>
+        <li><code>visibleAirports</code>: Stores currently visible airport data points.</li>
+        <li><code>currentViewport</code>: Keeps track of the current map view boundaries.</li>
+      </ul>
+      
+      <h4>Functions</h4>
+      <ul>
+        <li><code>loadData(year)</code>: Loads flight delay data for the specified year.</li>
+        <li><code>processAirportData(data)</code>: Processes raw airport data into usable formats.</li>
+        <li><code>parseConnections(connectionsStr)</code>: Parses connection data from strings.</li>
+        <li><code>prefetchAdjacentYears(year)</code>: Prefetches data for adjacent years to enhance performance.</li>
+        <li><code>clusterAirports(data, clusterRadius)</code>: Clusters nearby airports based on the current zoom level.</li>
+        <li><code>zoomed(event)</code>: Handles map zoom events with debouncing.</li>
+        <li><code>updateAirports()</code>: Updates the airport markers on the map based on filters and zoom.</li>
+        <li><code>toggleConnections(selectedAirport)</code>: Toggles flight connections for a selected airport.</li>
+        <li><code>initializeVisualization()</code>: Initializes the map and visualization elements.</li>
+        <li><code>updateLoadingStatus(isLoading)</code>: Updates the loading indicator visibility.</li>
+        <li><code>updateCacheStatus()</code>: Updates the status of cached data.</li>
+        <li><code>updateVisibleAirportsCount(displayed, total)</code>: Displays the count of visible airports.</li>
+      </ul>
+      
+      <h4>Interactive Elements</h4>
+      <ul>
+        <li><code>#year-select</code>: Dropdown to select the year for flight data.</li>
+        <li><code>#pct-delayed</code>: Input to set the minimum percentage of delayed flights.</li>
+        <li><code>#num-connections</code>: Input to set the minimum number of connections.</li>
+        <li><code>#apply-filters</code>: Button to apply the selected filters.</li>
+        <li><code>.zoom-controls button</code>: Buttons to control zoom levels on the map.</li>
+      </ul>
+      
+      <h4>Event Listeners</h4>
+      <ul>
+        <li><code>#apply-filters</code>: Applies filters when clicked.</li>
+        <li><code>.zoom-controls button</code>: Adjusts the zoom level based on the button clicked.</li>
+        <li><code>circle.airport</code>: Shows tooltip and highlights on hover; displays connections on click.</li>
+      </ul>
+      
+    </section>
+  </div>
+</body>
+</html>
