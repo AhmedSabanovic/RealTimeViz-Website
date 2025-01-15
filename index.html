@@ -30,7 +30,7 @@
   <main>
     <section id="Description">
       <h2>Description</h2>
-      <p>The Flight Delay Explorer is a real-time visualization of the USA map which shows the USA airports and statistics about them. The user is hopefully able to answer the question of which airlines have the highest and lowest delay rates.</p>
+      <p>The Flight Delay Explorer is a real-time visualization of the USA map which shows the USA airports and statistics about them. The user is hopefully able to answer the question of which airlines and airports have the highest and lowest delay rates.</p>
       <p>This interactive dashboard provides insights into the performance of various airlines, helping users to understand patterns and trends in flight delays and cancellations. By visualizing data from the US Department of Transportation, users can explore:</p>
       <ul>
         <li>Which airports experience the most delays?</li>
@@ -41,7 +41,7 @@
     </section>
     <section id="data">
       <h2>Data</h2>
-      <p>Airline Flight Delay and Cancellation Data, August 2019 - August 2023</p>
+      <p>1. Airline Flight Delay and Cancellation Data, August 2019 - August 2023</p>
       <p>US Department of Transportation, Bureau of Transportation Statistics</p>
       <p>Dataset available at: <a href="https://www.kaggle.com/datasets/patrickzel/flight-delay-and-cancellation-dataset-2019-2023/data?select=flights_sample_3m.csv" target="_blank">Kaggle</a></p>
       <p>Variables include:</p>
@@ -49,20 +49,28 @@
         <li>Flight routes (origin, destination)</li>
         <li>Time ranges for events (minutes, local time)</li>
         <li>Delay and cancellation reasons/attributions (limited)</li>
+
+      <p>2. US Airports dataset</p>
+      <p>Dataset available at: <a href="https://github.com/RandomFractals/geo-data-viewer/blob/master/data/csv/usa-airports.csv" ></a></p>
+      <p>Variables include:</p>
+      <ul>
+        <li>IATA Airport Code</li>
+        <li>Name of the airport, city and state</li>
+        <li>Coordinates</li>
+      
       </ul>
     </section>
     <section id="visualization">
       <h2>Visualization</h2>
-      <p>The visualization features a USA map where each dot represents an airport and is color-coded based on the average percentage of delayed flights at that airport. Dots will represent individual airports, and more smaller dots appear the more you zoom in. When users hover over an airport, additional information will appear, such as the average delay and the airport name. Additionally, users can select an airport to view its connections to other airports. There is a filter where users can select delay percentage and number of connections to filter the data.</p>
-    </section>
+      <p>The visualization features a USA map where each dot represents an airport and is color-coded based on the average percentage of delayed flights at that airport. Dots represent airports aggregated on the state level, and more smaller dots associated with individual airports appear the more you zoom in. When users hover over an airport, additional information appear, such as airport name and basic information regarding the number of flights, connections, delays and airlines. Additionally, users can select an airport to view its connections to other airports. There is a filter where users can select delay percentage, number of connections or year to filter the data. For a general overview, users can use histograms that provide insights into the distribution of average delays and % of delayed flights; data in histograms can also be filtered. </p>
+    </section
     <section id="analysis">
       <h2>Analysis</h2>
       <p>This section provides an in-depth analysis of the flight delay data. Users can explore various metrics and trends to gain a better understanding of the factors contributing to flight delays and cancellations.</p>
       <p>Key points of analysis include:</p>
       <ul>
-        <li>Comparative analysis of airlines based on delay rates.</li>
-        <li>Temporal patterns in flight delays, such as peak delay times and seasons.</li>
-        <li>Impact of external factors, such as weather conditions, on flight delays.</li>
+        <li>Comparative analysis of airlines based on delay rates, number of presented airlines and avaialable connections.</li>
+        <li>Comparative analysis of states and airports based on delay rates.</li>
       </ul>
     </section>
     <section id="links">
